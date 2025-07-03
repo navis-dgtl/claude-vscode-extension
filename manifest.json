@@ -1,0 +1,134 @@
+{
+  "dxt_version": "0.1",
+  "name": "vscode-integration-dxt",
+  "display_name": "VSCode",
+  "version": "1.0.1",
+  "description": "Complete VSCode integration with file management, project creation, and development tools",
+  "long_description": "A comprehensive Visual Studio Code integration extension for Claude Desktop that provides file management, project creation, and development tools through the Model Context Protocol (MCP). Features include file operations, project templates, VSCode extension management, search capabilities, and terminal integration.",
+  "author": {
+    "name": "Nick Prince",
+    "email": "nick.prince@Life.church",
+    "url": "https://www.linkedin.com/in/nickcprince/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/vscode-integration-dxt"
+  },
+  "homepage": "https://github.com/your-username/vscode-integration-dxt",
+  "license": "MIT",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js",
+        "${user_config.allowedDirectories}",
+        "--workspace",
+        "${user_config.defaultWorkspace}",
+        "--debug",
+        "${user_config.debugMode}",
+        "--auto-open",
+        "${user_config.autoOpenVSCode}"
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "list_files",
+      "description": "List files and directories in a specified path with detailed information"
+    },
+    {
+      "name": "read_file",
+      "description": "Read the contents of a file"
+    },
+    {
+      "name": "write_file",
+      "description": "Write content to a file, creating directories if needed"
+    },
+    {
+      "name": "delete_file",
+      "description": "Delete a file or directory"
+    },
+    {
+      "name": "create_directory",
+      "description": "Create a directory and its parent directories"
+    },
+    {
+      "name": "search_files",
+      "description": "Search for text patterns in files within a directory"
+    },
+    {
+      "name": "open_vscode",
+      "description": "Open VSCode with a file, directory, or workspace"
+    },
+    {
+      "name": "list_vscode_extensions",
+      "description": "List installed VSCode extensions"
+    },
+    {
+      "name": "install_vscode_extension",
+      "description": "Install a VSCode extension"
+    },
+    {
+      "name": "uninstall_vscode_extension",
+      "description": "Uninstall a VSCode extension"
+    },
+    {
+      "name": "create_project",
+      "description": "Create a new project with a specified template"
+    },
+    {
+      "name": "run_terminal_command",
+      "description": "Execute a terminal command in a specified directory"
+    }
+  ],
+  "user_config": {
+    "allowedDirectories": {
+      "type": "directory",
+      "title": "Allowed Directories",
+      "description": "Directories where file operations are allowed (security setting)",
+      "multiple": true,
+      "default": ["${HOME}/Code", "${HOME}/Documents", "${HOME}/Desktop"],
+      "required": true
+    },
+    "defaultWorkspace": {
+      "type": "directory",
+      "title": "Default Workspace",
+      "description": "Default workspace directory for new projects",
+      "default": "${HOME}/Code",
+      "required": false
+    },
+    "debugMode": {
+      "type": "boolean",
+      "title": "Debug Mode",
+      "description": "Enable debug logging for troubleshooting",
+      "default": false,
+      "required": false
+    },
+    "autoOpenVSCode": {
+      "type": "boolean",
+      "title": "Auto-open VSCode",
+      "description": "Automatically open VSCode for created projects",
+      "default": true,
+      "required": false
+    }
+  },
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=16.0.0"
+    }
+  },
+  "keywords": [
+    "vscode",
+    "development",
+    "file-management",
+    "project-creation",
+    "mcp-server",
+    "claude",
+    "dxt"
+  ]
+}

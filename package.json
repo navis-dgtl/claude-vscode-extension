@@ -1,0 +1,41 @@
+{
+  "name": "vscode-integration-dxt",
+  "version": "1.0.0",
+  "description": "Complete VSCode integration with file management, project creation, and development tools",
+  "main": "server/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "validate": "dxt validate manifest.json",
+    "pack": "dxt pack .",
+    "test": "node server/index.js --test",
+    "dev": "DEBUG_MODE=true node server/index.js"
+  },
+  "keywords": [
+    "vscode",
+    "development",
+    "file-management",
+    "project-creation",
+    "mcp-server",
+    "claude",
+    "dxt"
+  ],
+  "author": "Nick Prince",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.13.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/vscode-integration-dxt"
+  },
+  "files": [
+    "server/",
+    "manifest.json",
+    "README.md",
+    "icon.png"
+  ]
+}
