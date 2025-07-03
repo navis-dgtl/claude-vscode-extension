@@ -262,8 +262,7 @@ MIT License - see LICENSE file for details.
 ## Support
 
 For issues and questions:
-- Email: nick.prince@Life.church
-- LinkedIn: https://www.linkedin.com/in/nickcprince/
+- Email: navis.dgtl@gmail.com
 - Check the troubleshooting section above
 - Review the Claude Desktop documentation
 - Enable debug mode for detailed error information
